@@ -14,4 +14,4 @@ Feature: Test Homepage
         Given the element "@Home.search_box" is visible
         When  I set "BRAF" to the inputfield "@Home.search_box"
         And   I wait on element "@Home.search_results" for 10000ms to be visible
-        Then  I expect that element "@Home.search_results" contains the text "BRCA"
+        Then  I expect that element "@Home.search_results" contains the text "BRAF1"

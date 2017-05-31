@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { BASE_URL } = process.env;
+const { BASE_URL, SAUCELAB_USER, SAUCELAB_KEY } = process.env;
 
 exports.config = {
     //
@@ -19,6 +19,10 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
+
+    user: process.env.SAUCE_USERNAME,
+    key: process.env.SAUCE_ACCESS_KEY,
+
     //
     // ============
     // Capabilities
