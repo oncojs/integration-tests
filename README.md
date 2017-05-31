@@ -1,3 +1,11 @@
+ICGC notes:
+
+Make sure you the variables in the .env file
+
+
+
+-------------------------------------
+
 Cucumber Boilerplate
 ====================
 
