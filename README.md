@@ -2,6 +2,7 @@ ICGC notes:
 
 Make sure you the variables in the .env file
 
+When writing test scripts, make sure to install [Sublime Text 3](https://www.sublimetext.com/3) and the plugin [Gherkin Auto-Complete Plus](https://github.com/austincrft/sublime-gherkin-auto-complete-plus) to get hints for available commands
 
 
 -------------------------------------
