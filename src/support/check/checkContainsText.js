@@ -7,7 +7,7 @@
  * @param  {String}   expectedText  The text to check against
  * @param  {Function} done          Function to execute when finished
  */
-module.exports = (type, element, falseCase, expectedText, done) => {
+module.exports = (type, element, falseCase, shouldMatchExact, expectedText, done) => {
     /**
      * The command to perform on the browser object
      * @type {String}
@@ -46,10 +46,12 @@ module.exports = (type, element, falseCase, expectedText, done) => {
         boolFalseCase = (falseCase === ' not');
     }
 
+    const method = shouldMatchExact ? 'equal' : 'contain';
+
     if (boolFalseCase) {
-        expect(text).to.not.equal(stringExpectedText);
+        expect(text).to.not[method](stringExpectedText);
     } else {
-        expect(text).to.equal(stringExpectedText);
+        expect(text).to[method](stringExpectedText);
     }
 
     doneCallback();

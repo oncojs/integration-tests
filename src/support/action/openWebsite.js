@@ -9,7 +9,11 @@ module.exports = (type, page, done) => {
      * The URL to navigate to
      * @type {String}
      */
-    const url = (type === 'url') ? page : browser.options.baseUrl + page;
+    const url = (type === 'url')
+      ? page
+      : type === 'page'
+        ? browser.options.baseUrl + global.PageObjects[page].url
+        : browser.options.baseUrl + page;
 
     browser.url(url);
 

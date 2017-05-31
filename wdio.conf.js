@@ -1,3 +1,6 @@
+require('dotenv').config();
+const { BASE_URL } = process.env;
+
 exports.config = {
     //
     // ==================
@@ -71,7 +74,7 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url
     // parameter starts with "/", then the base url gets prepended.
-    baseUrl: 'http://localhost:8080',
+    baseUrl: BASE_URL,
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -124,6 +127,7 @@ exports.config = {
     // definitions.
     cucumberOpts: {
         require: [
+            './src/steps/injectPageObjectHelpers.js',
             './src/steps/given.js',
             './src/steps/then.js',
             './src/steps/when.js',

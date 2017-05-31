@@ -20,7 +20,7 @@ import resizeScreenSize from '../support/action/resizeScreenSize';
 
 module.exports = function given() {
     this.Given(
-        /^I open the (url|site) "([^"]*)?"$/,
+        /^I open the (url|site|page) "([^"]*)?"$/,
         openWebsite
     );
 

@@ -1,9 +1,11 @@
 const config = require('./wdio.conf.js').config;
 
 config.capabilities = [{
-    browserName: 'phantomjs',
+    browserName: 'firefox',
 }];
 
-config.services = ['phantomjs'];
+config.maxInstances = 5;
+
+config.services = ['selenium-standalone'];
 
 exports.config = config;
