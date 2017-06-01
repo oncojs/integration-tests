@@ -1,6 +1,6 @@
 class CommonPage {
     constructor() {
-        this.title = 'Any Page';
+        this.title = 'Common Pages';
     }
 
     get selectors () {

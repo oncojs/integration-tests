@@ -1,6 +1,6 @@
 class HomePage {
   constructor() {
-    this.title = 'Home Page';
+    this.title = 'Home';
     this.url = '/';
   }
 

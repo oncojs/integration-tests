@@ -1,6 +1,6 @@
 class ProjectsIndexPage {
   constructor() {
-    this.title = 'Projects Index Page';
+    this.title = 'Projects Index';
     this.url = '/projects';
   }
   
