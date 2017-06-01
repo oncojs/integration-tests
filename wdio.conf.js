@@ -1,5 +1,18 @@
 require('dotenv').config();
-const { BASE_URL, SAUCELAB_USER, SAUCELAB_KEY } = process.env;
+const _ = require('lodash');
+
+const defaultConfigs = {
+    PROJECT: 'GDC',
+};
+
+const {
+    BASE_URL,
+    SAUCELAB_USER,
+    SAUCELAB_KEY,
+    PROJECT
+} = process.env;
+
+const specsPath = `./src/features/${PROJECT}/**/*.feature`;
 
 exports.config = {
     //
@@ -13,7 +26,7 @@ exports.config = {
     // `wdio` will be called from there.
     //
     specs: [
-        './src/features/**/*.feature',
+        specsPath,
     ],
     // Patterns to exclude.
     exclude: [
