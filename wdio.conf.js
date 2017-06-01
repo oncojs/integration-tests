@@ -14,6 +14,11 @@ const {
 
 const specsPath = `./src/features/${PROJECT}/**/*.feature`;
 
+if (!BASE_URL) {
+    console.error('Please provide a BASE_URL in the ".env" file');
+    process.exit();
+}
+
 exports.config = {
     //
     // ==================
