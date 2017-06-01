@@ -1,10 +1,6 @@
 require('dotenv').config();
 const _ = require('lodash');
 
-const defaultConfigs = {
-    PROJECT: 'GDC',
-};
-
 const {
     BASE_URL,
     SAUCELAB_USER,
@@ -14,6 +10,10 @@ const {
 
 const specsPath = `./src/features/${PROJECT}/**/*.feature`;
 
+if (!PROJECT) {
+    console.error('Please provide a PROJECT in the ".env" file');
+    process.exit();
+}
 if (!BASE_URL) {
     console.error('Please provide a BASE_URL in the ".env" file');
     process.exit();

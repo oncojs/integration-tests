@@ -1,5 +1,5 @@
 var _ = require('lodash');
-const PageObjects = require('../support/pages');
+const PageObjects = require('../support/pages')[process.env.PROJECT];
 
 class PageNotFoundError extends Error {
   constructor (message) {
