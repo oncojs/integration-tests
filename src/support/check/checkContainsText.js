@@ -24,7 +24,8 @@ module.exports = (type, element, falseCase, shouldMatchExact, expectedText, done
      * The expected text
      * @type {String}
      */
-    let stringExpectedText = expectedText;
+    // remove escape character
+    let stringExpectedText = expectedText.replace(/\\/g, '');
 
     /**
      * Callback to trigger when done
