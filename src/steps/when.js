@@ -18,7 +18,7 @@ import submitForm from '../support/action/submitForm';
 
 module.exports = function when() {
     this.When(
-        /^I (click|doubleclick) on the (link|button|element) "([^"]*)?"$/,
+        /^I click on the (link|button|element) "([^"]*)?"$/,
         clickElement
     );
 

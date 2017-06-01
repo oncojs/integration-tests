@@ -7,22 +7,16 @@ import checkIfElementExists from '../lib/checkIfElementExists';
  * @param  {String}   element Element selector
  * @param  {Function} done    Function to execute when finished
  */
-module.exports = (action, type, element, done) => {
+module.exports = (type, element, done) => {
     /**
      * Element to perform the action on
      * @type {String}
      */
     const elem = (type === 'link') ? `=${element}` : element;
 
-    /**
-     * The method to call on the browser object
-     * @type {String}
-     */
-    const method = (action === 'click') ? 'click' : 'doubleClick';
-
     checkIfElementExists(elem);
 
-    browser[method](elem);
+    browser.click(elem);
 
     done();
 };

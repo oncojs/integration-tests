@@ -63,7 +63,7 @@ module.exports = function then() {
     );
 
     this.Then(
-        /^I expect that (element|inputfield) "([^"]*)?"( not)* contains the( exact)* text "([^"]*)?"$/,
+        /^I expect that (element|inputfield) "([^"]*)?"( not)* contains the( exact)* text "(.*)?"$/,
         checkContainsText
     );
 
