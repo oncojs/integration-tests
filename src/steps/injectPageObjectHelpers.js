@@ -45,7 +45,7 @@ global.PageObjects = PageObjects;
 global.getSelector = getSelector;
 
 const enhanceFn = (fn, context) => function () {
-  if (arguments[0].startsWith('@')) {
+  if (arguments[0].startsWith && arguments[0].startsWith('@')) {
     arguments[0] = getSelector(arguments[0]);
   }
   return fn.apply(context || this, arguments);
