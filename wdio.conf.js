@@ -11,11 +11,11 @@ const {
 const specsPath = `./src/features/${PROJECT}/**/*.feature`;
 
 if (!PROJECT) {
-    console.error('Please provide a PROJECT in the ".env" file');
+    console.error('Please provide a PROJECT in the ".env" file (e.g. GDC, ICGC)');
     process.exit();
 }
 if (!BASE_URL) {
-    console.error('Please provide a BASE_URL in the ".env" file');
+    console.error('Please provide a BASE_URL in the ".env" file (e.g. https://gdc-portal-staging.datacommons.io)');
     process.exit();
 }
 
