@@ -13,6 +13,22 @@ Feature: Projects list page facets
         Then  I expect that element "@ProjectsIndex.facet_project_search_results" contains the text "TCGA"
         Then  I expect that element "@ProjectsIndex.facet_project_search_results" contains the text "Colorectal"
 
+    Scenario: Test Primary Site facet
+        Then  I wait on element "@ProjectsIndex.facet_primarysite_1" for 10000ms to be visible    
+        When  I click on the button "@ProjectsIndex.facet_primarysite_1"
+        Then  I expect that element "@ProjectsIndex.query" contains the text "Kidney"
+        Then  I expect that element "@ProjectsIndex.query" contains the text "Primary Site"
+        Then  I expect that element "@ProjectsIndex.table" contains the text "Kidney"
+
+	@Pending
+    Scenario: Test any facet
+        Then  I wait on element "@ProjectsIndex.facet_primarysite_1" for 10000ms to be visible    
+        Then  I set $tmp_value to the value of "@ProjectsIndex.facet_primarysite_1"
+        When  I click on the button "@ProjectsIndex.facet_primarysite_1"
+        Then  I expect that element "@ProjectsIndex.query" contains the text $tmp_value
+        Then  I expect that element "@ProjectsIndex.query" contains the text "Primary Site"
+        Then  I expect that element "@ProjectsIndex.table" contains the text $tmp_value
+
     @Pending
     Scenario: Test if Project facet is displayed and usable
         Then  I wait on element "@ProjectsIndex.facet_project_search" for 10000ms to be visible    
