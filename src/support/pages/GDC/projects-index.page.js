@@ -12,6 +12,7 @@ class ProjectsIndexPage {
     	, graph_casedistribution_cases: '#skip > div > div.css-rk9c3n > span > div.css-mfuoyb > div:nth-child(2) > div:nth-child(2)'
     	, tab_table: '#skip > div > div.css-rk9c3n > span > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)'
     	, tab_graph: '#skip > div > div.css-rk9c3n > span > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)'
+    	, table: '#projects-table'
     	, table_total_files: '#projects-table > tbody > tr:nth-child(40) > td:nth-child(13) > a'
     	, table_button_json: '#skip > div > div.css-rk9c3n > span > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > span:nth-child(3) > button'
     	, table_button_tsv: '#skip > div > div.css-rk9c3n > span > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > span:nth-child(4) > button'
@@ -20,6 +21,9 @@ class ProjectsIndexPage {
     	, facet_project_search: '#project_id'
 		, facet_project_search_results: '#project_id-options'
 		, facet_project_search_results_1: '#project_id-options > div:nth-child(1)'
+		, facet_primarysite: '#skip > div > div.css-drkel2 > div > div:nth-child(2) > div > div:nth-child(3)'
+		, facet_primarysite_1: '#skip > div > div.css-drkel2 > div > div:nth-child(2) > div > div:nth-child(3) > div.css-kfzjep > div > div:nth-child(1) > a.css-19186e6'
+		, query: '#skip > div > div.css-rk9c3n > div > div'
     };
   }
 }

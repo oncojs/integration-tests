@@ -3,11 +3,12 @@ Feature: Test Projects Index Page
 
     Background:
         Given I open the page "ProjectsIndex"
-
+	
+	@Pending
     Scenario: Test if total number of files is greater than 0
         Then  I wait on element "@ProjectsIndex.table_total_files" for 10000ms to be visible
         Then  I expect that element "@ProjectsIndex.table_total_files" is not empty
-        Then  I expect that element "@ProjectsIndex.table_total_files" not contains the exact text "274,724"
+        Then  I expect that element "@ProjectsIndex.table_total_files" to be greater than "274,724"
 
     @Pending
     Scenario: Test if table can be downloaded in TSV
