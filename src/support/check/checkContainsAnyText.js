@@ -39,9 +39,9 @@ module.exports = (type, element, falseCase, done) => {
     }
 
     if (boolFalseCase) {
-        expect(text).to.equal('');
-    } else {
         expect(text).to.not.equal('');
+    } else {
+        expect(text).to.equal('');
     }
 
     doneCallback();
