@@ -1,4 +1,4 @@
-Feature: Test Projects Index Page
+Feature: Test the projects list page
     Test a few things with project index page
 
     Background:
