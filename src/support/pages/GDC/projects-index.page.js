@@ -6,6 +6,7 @@ class ProjectsIndexPage {
   
   get selectors() {
     return {
+    	table_total_files: '#projects-table > tbody > tr:nth-child(40) > td:nth-child(13) > a',
     };
   }
 
