@@ -1,6 +1,12 @@
-ICGC notes:
+Requirements
 
-Make sure you the variables in the .env file
+- [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (required if using selenium-standalone instead of saucelabs)
+- [Node v6/v7](https://nodejs.org/en/download/) (node 8 wont' work yet)
+
+ICGC notes:
+====================
+
+Create a `.env` file and set its variables (reference the [.env.schema](.env.schema) for what to include)
 
 When writing test scripts, make sure to install [Sublime Text 3](https://www.sublimetext.com/3) and the plugin [Gherkin Auto-Complete Plus](https://github.com/austincrft/sublime-gherkin-auto-complete-plus) to get hints for available commands
 
