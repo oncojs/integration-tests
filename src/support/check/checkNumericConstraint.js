@@ -23,18 +23,19 @@ module.exports = (type, element, constraintType, referenceValue, done) => {
     const referenceNumber = Number(referenceValue);
 
     // Check for empty element
-    if (!doneCallback && typeof parsedExpectedText === 'function') {
-        doneCallback = parsedExpectedText;
-        parsedExpectedText = '';
+    if (!doneCallback && typeof referenceValue === 'function') {
+        doneCallback = referenceValue;
+        referenceValue = '';
     }
 
-    if (parsedExpectedText === undefined) {
-        parsedExpectedText = '';
+    if (referenceValue === undefined) {
+        referenceValue = '';
     }
+
+    constraintType.should.be.oneOf(['above', 'below', 'equal']);
 
     const text = browser[command](element);
-    const number = Number(text);
-    constraintType.should.be.oneOf(['above', 'below', 'equal']);
+    const number = Number(text.replace(/,/g, ''));
     
     switch(constraintType) {
         case 'above':
@@ -47,7 +48,6 @@ module.exports = (type, element, constraintType, referenceValue, done) => {
             number.should.equal(referenceNumber);
             break;
     }
-    
 
     doneCallback();
 };
