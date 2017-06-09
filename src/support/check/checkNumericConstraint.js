@@ -20,7 +20,6 @@ module.exports = (type, element, constraintType, referenceValue, done) => {
     let doneCallback = done;
 
     expect(isNaN(referenceValue)).to.be.false;
-    const referenceNumber = Number(referenceValue);
 
     // Check for empty element
     if (!doneCallback && typeof referenceValue === 'function') {
@@ -39,13 +38,13 @@ module.exports = (type, element, constraintType, referenceValue, done) => {
     
     switch(constraintType) {
         case 'above':
-            number.should.be.above(referenceNumber);
+            number.should.be.above(referenceValue);
             break;
         case 'below':
-            number.should.be.below(referenceNumber);
+            number.should.be.below(referenceValue);
             break;
         case 'equal':
-            number.should.equal(referenceNumber);
+            number.should.equal(referenceValue);
             break;
     }
 
