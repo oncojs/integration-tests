@@ -149,7 +149,7 @@ exports.config = {
     // definitions.
     cucumberOpts: {
         require: [
-            './src/steps/injectPageObjectHelpers.js',
+            './src/support/globallyInjectedHelpers/pageObjectHelpers.js',
             './src/steps/given.js',
             './src/steps/then.js',
             './src/steps/when.js',
