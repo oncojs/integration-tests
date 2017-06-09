@@ -4,13 +4,8 @@
   "description": "Boilerplate project to run WebdriverIO tests with Cucumber",
   "homepage": "https://github.com/webdriverio/cucumber-boilerplate",
   "scripts": {
-    "start": "npm run test:features",
-    "clean": "read -p \"Are you sure you want to clean the project? [y/n] \" -n 1 -r; if [[ $REPLY =~ ^[Yy]$ ]]; then sudo rm -R .git .github demo-app test .codeclimate.yml .travis.yml jest.json wdio.BUILD.conf.js src/features/**; fi",
-    "local-webserver": "http-server ./demo-app -s",
-    "test": "npm run test:validate && npm run test:unit && npm run test:features",
-    "test:features": "wdio wdio.BUILD.conf.js",
-    "test:unit": "jest --config=jest.json",
-    "test:validate": "eslint 'src/**/*.js' 'test/**/*.js!(setup.js)'"
+    "start": "wdio wdio.BUILD.conf.js",
+    "clean": "read -p \"Are you sure you want to clean the project? [y/n] \" -n 1 -r; if [[ $REPLY =~ ^[Yy]$ ]]; then sudo rm -R .git .github demo-app test .codeclimate.yml .travis.yml jest.json wdio.BUILD.conf.js src/features/**; fi"
   },
   "repository": {
     "type": "git",

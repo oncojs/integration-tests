@@ -10,10 +10,17 @@ Create a `.env` file and set its variables (reference the [.env.schema](.env.sch
 
 When writing test scripts, make sure to install [Sublime Text 3](https://www.sublimetext.com/3) and the plugin [Gherkin Auto-Complete Plus](https://github.com/austincrft/sublime-gherkin-auto-complete-plus) to get hints for available commands
 
+To only run tests that are tagged with @Homepage
+
+```bash
+npm start -- --tags=@Homepage
+```
 
 -------------------------------------
 
-Cucumber Boilerplate
+Original README from 
+
+[Cucumber Boilerplate](https://github.com/webdriverio/wdio-cucumber-framework)
 ====================
 
 [![Build Status](https://travis-ci.org/webdriverio/cucumber-boilerplate.svg?branch=master)](https://travis-ci.org/webdriverio/cucumber-boilerplate) [![Dependency Status](https://www.versioneye.com/user/projects/58932d83b166b5004053c63c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58932d83b166b5004053c63c) [![Code Climate](https://codeclimate.com/github/webdriverio/cucumber-boilerplate/badges/gpa.svg)](https://codeclimate.com/github/webdriverio/cucumber-boilerplate) [![Test Coverage](https://codeclimate.com/github/webdriverio/cucumber-boilerplate/badges/coverage.svg)](https://codeclimate.com/github/webdriverio/cucumber-boilerplate/coverage)
