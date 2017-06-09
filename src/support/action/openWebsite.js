@@ -1,3 +1,4 @@
+const urlJoin = require('url-join');
 /**
  * Open the given URL
  * @param  {String}   type Type of navigation (url or site)
@@ -12,8 +13,8 @@ module.exports = (type, page, done) => {
     const url = (type === 'url')
       ? page
       : type === 'page'
-        ? browser.options.baseUrl + global.PageObjects[page].url
-        : browser.options.baseUrl + page;
+        ? urlJoin(browser.options.baseUrl, global.PageObjects[page].url)
+        : urlJoin(browser.options.baseUrl, page);
 
     browser.url(url);
 
