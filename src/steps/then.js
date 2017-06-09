@@ -25,6 +25,7 @@ import isExisting from '../support/check/isExisting';
 import isVisible from '../support/check/isVisible';
 import waitFor from '../support/action/waitFor';
 import waitForVisible from '../support/action/waitForVisible';
+import checkNumericConstraint from '../support/check/checkNumericConstraint';
 
 module.exports = function then() {
     this.Then(
@@ -60,6 +61,11 @@ module.exports = function then() {
     this.Then(
         /^I expect that (element|inputfield) "([^"]*)?"( not)* matches the text "([^"]*)?"$/,
         checkEqualsText
+    );
+
+    this.Then(
+        /^I expect that (element|inputfield) "([^"]*)?" is (above|below|equal) "([^"]*)?"$/,
+        checkNumericConstraint
     );
 
     this.Then(
