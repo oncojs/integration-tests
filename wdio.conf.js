@@ -150,6 +150,7 @@ exports.config = {
     cucumberOpts: {
         require: [
             './src/support/globallyInjectedHelpers/pageObjectHelpers.js',
+            './src/support/globallyInjectedHelpers/saveValueHelpers.js',
             './src/steps/given.js',
             './src/steps/then.js',
             './src/steps/when.js',
@@ -203,6 +204,7 @@ exports.config = {
          */
         const chai = require('chai');
 
+        global.chai = chai;
         global.expect = chai.expect;
         global.assert = chai.assert;
         global.should = chai.should();

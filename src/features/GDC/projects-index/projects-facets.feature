@@ -20,14 +20,12 @@ Feature: Projects list page facets
         Then  I expect that element "@ProjectsIndex.query" contains the text "Primary Site"
         Then  I expect that element "@ProjectsIndex.table" contains the text "Kidney"
 
-	@Pending
     Scenario: Test any facet
         Then  I wait on element "@ProjectsIndex.facet_primarysite_1" for 10000ms to be visible    
-        Then  I set $tmp_value to the value of "@ProjectsIndex.facet_primarysite_1"
+        Then  I save the value of "@ProjectsIndex.facet_primarysite_1" as "$tmp_value"
         When  I click on the button "@ProjectsIndex.facet_primarysite_1"
-        Then  I expect that element "@ProjectsIndex.query" contains the text $tmp_value
-        Then  I expect that element "@ProjectsIndex.query" contains the text "Primary Site"
-        Then  I expect that element "@ProjectsIndex.table" contains the text $tmp_value
+        Then  I expect that element "@ProjectsIndex.query" contains the text "$tmp_value"
+        Then  I expect that element "@ProjectsIndex.table" contains the text "$tmp_value"
 
     @Pending
     Scenario: Test if Project facet is displayed and usable
