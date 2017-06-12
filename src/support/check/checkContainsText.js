@@ -47,7 +47,7 @@ module.exports = (type, element, falseCase, shouldMatchExact, expectedText, done
         boolFalseCase = (falseCase === ' not');
     }
 
-    const method = shouldMatchExact ? 'equal' : 'contain';
+    const method = shouldMatchExact ? 'equal' : 'include';
 
     if (boolFalseCase) {
         expect(text).to.not[method](stringExpectedText);

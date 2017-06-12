@@ -174,6 +174,11 @@ module.exports = function then() {
     );
 
     this.Then(
+        /^I save the value of element "([^"]*)?" as "\$([^"]*)?"$/,
+        require('../support/action/saveValue'),
+    );
+
+    this.Then(
         /^I accept the privacy warning$/,
         require('../support/action/acceptPrivacyWarning'),
     );
