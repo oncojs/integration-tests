@@ -32,9 +32,9 @@ const getSelector = (selector) => {
     const pageName = selector.slice(1).split('.')[0];
     const elementName = selector.slice(selector.indexOf('.') + 1);
     if (!PageObjects[pageName]) {
-      throw new PageObjectNotFoundError(`Page "${pageName}" not found. Selector was "${selector}"`);
+      throw new PageObjectNotFoundError(`Page Object "${pageName}" not found. (Selector was "${selector}")`);
     } else if (!PageObjects[pageName].selectors[elementName]) {
-      throw new PageSelectorNotFoundError(`Element "${elementName}" not found on Page "${pageName}". Selector was "${selector}"`);
+      throw new PageSelectorNotFoundError(`Element "${elementName}" not found on Page Object for "${pageName}". (Selector was "${selector}")`);
     }
     elementSelector = PageObjects[pageName].selectors[elementName];
   }
