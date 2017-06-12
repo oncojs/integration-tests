@@ -182,4 +182,9 @@ module.exports = function then() {
         /^I accept the privacy warning$/,
         require('../support/action/acceptPrivacyWarning'),
     );
+
+    this.Then(
+        /^I expect that element "([^"]*)?" contains (at least|at most|exactly) (\d+) "([^"]*)?"$/,
+        require('../support/check/checkContainsElements'),
+    )
 };

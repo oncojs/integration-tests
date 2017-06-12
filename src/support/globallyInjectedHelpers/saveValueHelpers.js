@@ -28,8 +28,15 @@ const numericAssertionOverride = function (_super) {
   };
 };
 
-chai.Assertion.overwriteMethod('above', numericAssertionOverride);
-chai.Assertion.overwriteMethod('below', numericAssertionOverride);
+const numericMethodsToOverwrite = [
+    'above',
+    'below',
+    'least',
+    'most',
+];
+
+numericMethodsToOverwrite.forEach(methodName => chai.Assertion.overwriteMethod(methodName, numericAssertionOverride));
+
 chai.Assertion.overwriteMethod('equal', AssertionOverride);
 chai.Assertion.overwriteChainableMethod(
     'include',

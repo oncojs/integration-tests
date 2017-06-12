@@ -10,9 +10,9 @@ Feature: Projects list page facets
         Then  I wait on element "@ProjectsIndex.facet_project_search" for 10000ms to be visible    
         Given the element "@ProjectsIndex.facet_project_search" is visible
         When  I set "Adenocarcinoma" to the inputfield "@ProjectsIndex.facet_project_search"
-        Then  I wait on element "@ProjectsIndex.facet_project_search_results_1" for 3000ms to be visible
-        Then  I expect that element "@ProjectsIndex.facet_project_search_results" contains the text "TCGA"
-        Then  I expect that element "@ProjectsIndex.facet_project_search_results" contains the text "Colorectal"
+        Then  I wait on element "@ProjectsIndex.first_facet_project_search_result" for 3000ms to be visible
+        Then  I expect that element "@ProjectsIndex.facet_project_search_result_list" contains the text "TCGA"
+        Then  I expect that element "@ProjectsIndex.facet_project_search_result_list" contains the text "Colorectal"
 
     Scenario: Test Primary Site facet
         Then  I wait on element "@ProjectsIndex.facet_primarysite_1" for 10000ms to be visible    
@@ -28,11 +28,10 @@ Feature: Projects list page facets
         Then  I expect that element "@ProjectsIndex.query" contains the text "$tmp_value"
         Then  I expect that element "@ProjectsIndex.table" contains the text "$tmp_value"
 
-    @Pending
     Scenario: Test if Project facet is displayed and usable
         Then  I wait on element "@ProjectsIndex.facet_project_search" for 10000ms to be visible    
         Given the element "@ProjectsIndex.facet_project_search" is visible
         When  I set "Adenocarcinoma" to the inputfield "@ProjectsIndex.facet_project_search"
-        Then  I wait on element "@ProjectsIndex.facet_project_search_results" for 3000ms to be visible
-        Then  I expect that element "@ProjectsIndex.facet_project_search_results" contains at least 2 "@ProjectsIndex.facet_project_search_result"
+        Then  I wait on element "@ProjectsIndex.facet_project_search_result_list" for 3000ms to be visible
+        Then  I expect that element "@ProjectsIndex.facet_project_search_result_list" contains at least 2 "@ProjectsIndex.facet_project_search_result_item"
 
