@@ -155,7 +155,7 @@ exports.config = {
             './src/steps/then.js',
             './src/steps/when.js',
         ], // <string[]> (file/dir) require files before executing features
-        backtrace: false, // <boolean> show full backtrace for errors
+        backtrace: true, // <boolean> show full backtrace for errors
         compiler: [
             'js:babel-register',
         ], // <string[]> ("extension:module") require files with the given
