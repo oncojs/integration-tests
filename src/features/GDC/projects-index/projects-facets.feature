@@ -28,7 +28,7 @@ Feature: Projects list page facets
         Then  I expect that element "@ProjectsIndex.query" contains the text "$tmp_value"
         Then  I expect that element "@ProjectsIndex.table" contains the text "$tmp_value"
 
-    Scenario: Test if Project facet is displayed and usable
+    Scenario: Test if searching for Adenocarcinoma returns some results
         Then  I wait on element "@ProjectsIndex.facet_project_search" for 10000ms to be visible    
         Given the element "@ProjectsIndex.facet_project_search" is visible
         When  I set "Adenocarcinoma" to the inputfield "@ProjectsIndex.facet_project_search"
