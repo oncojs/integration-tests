@@ -172,4 +172,9 @@ module.exports = function then() {
         /^I expect that a (alertbox|confirmbox|prompt)( not)* contains the text "([^"]*)?"$/,
         checkModalText
     );
+
+    this.Then(
+        /^I accept the privacy warning$/,
+        require('../support/action/acceptPrivacyWarning'),
+    );
 };

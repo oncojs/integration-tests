@@ -4,6 +4,7 @@ Feature: Projects list page facets
 
     Background:
         Given I open the page "ProjectsIndex"
+        And   I accept the privacy warning
  
     Scenario: Test if Project facet is displayed and usable
         Then  I wait on element "@ProjectsIndex.facet_project_search" for 10000ms to be visible    
