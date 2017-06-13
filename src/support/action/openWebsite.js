@@ -12,7 +12,7 @@ module.exports = (type, page, done) => {
      */
     const url = (type === 'url')
       ? page
-      : type === 'page'
+      : (global.PageObjects[page] && global.PageObjects[page].url)
         ? urlJoin(browser.options.baseUrl, global.PageObjects[page].url)
         : urlJoin(browser.options.baseUrl, page);
 
