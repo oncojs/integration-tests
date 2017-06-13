@@ -14,10 +14,10 @@
 module.exports =
 (elem, obsolete, ms, isWaitingOnSpecificState, falseState, state, done) => {
     /**
-     * Maximum number of milliseconds to wait, default 3000
+     * Maximum number of milliseconds to wait, default 10000
      * @type {Int}
      */
-    const intMs = parseInt(ms, 10) || 5000;
+    const intMs = parseInt(ms, 10) || 10000;
 
     /**
      * Command to perform on the browser object

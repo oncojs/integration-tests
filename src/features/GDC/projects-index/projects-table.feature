@@ -4,11 +4,10 @@ Feature: Test Projects Index Page
     Background:
         Given I open the page "ProjectsIndex"
 	
-	@Pending
-    Scenario: Test if total number of files is greater than 0
+    Scenario: Test if total number of files is above 0
         Then  I wait on element "@ProjectsIndex.table_total_files" for 10000ms to be visible
         Then  I expect that element "@ProjectsIndex.table_total_files" is not empty
-        Then  I expect that element "@ProjectsIndex.table_total_files" to be greater than "274,724"
+        Then  I expect that element "@ProjectsIndex.table_total_files" to be above "0"
 
     @Pending
     Scenario: Test if table can be downloaded in TSV
@@ -17,7 +16,7 @@ Feature: Test Projects Index Page
         When  I click on the button "@ProjectsIndex.table_button_json"
         Then  I expect that the downloaded file is of "JSON" format
         Then  I expect that element "['data']['projects']" from downloaded file contains at least "2" values
-        Then  I expect that element "['data']['projects']['total']" from downloaded file to be greater than "3"
+        Then  I expect that element "['data']['projects']['total']" from downloaded file to be above "3"
 
     @Pending
     Scenario: Test if table can be downloaded in TSV

@@ -1,6 +1,7 @@
 @GenePage
 Feature: Test Gene Page
 
+    # SVT-84
     Scenario: SVT-84 Verify a Gene Summary is Displayed
         Given I open the page "/genes/ENSG00000141510"
         And   I accept the privacy warning

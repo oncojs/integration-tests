@@ -64,7 +64,7 @@ module.exports = function then() {
     );
 
     this.Then(
-        /^I expect that (element|inputfield) "([^"]*)?" is (above|below|equal) "([^"]*)?"$/,
+        /^I expect that (element|inputfield) "([^"]*)?" (?:is|to be) (above|below|equal) "([^"]*)?"$/,
         checkNumericConstraint
     );
 

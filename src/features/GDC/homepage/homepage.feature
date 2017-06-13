@@ -5,6 +5,7 @@ Feature: Test Homepage
 
     Background:
         Given I open the page "Home"
+        Then  I wait on element "@Common.load_indicator" to not be visible
 
     Scenario: Warning prompt hides after accepting
         Then  I wait on element "@Common.privacy_warning" for 10000ms to be visible
@@ -13,13 +14,14 @@ Feature: Test Homepage
 
     Scenario: Search for BRAF shows a result containing BRAF1
         Then  I wait on element "@Home.search_box" for 10000ms to be visible
-        Given the element "@Home.search_box" is visible
+        And  I wait on element "@Common.load_indicator" to not be visible
         When  I set "BRAF" to the inputfield "@Home.search_box"
         And   I wait on element "@Home.search_results" for 10000ms to be visible
         Then  I expect that element "@Home.search_results" contains the text "BRAF1"
-    
+
     Scenario: Data Portal Summary has non-zero values
-        Then  I wait on element "@Common.load_indicator" for 10000ms to not be visible
+        Then  I wait on element "@Home.summary_project_count" to be visible
+        Then  I wait on element "@Common.load_indicator" to not be visible
         Then  I expect that element "@Home.summary_project_count" is above "0"
         And   I expect that element "@Home.summary_primary_sites_count" is above "0"
         And   I expect that element "@Home.summary_cases_count" is above "0"
