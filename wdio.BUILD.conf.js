@@ -1,10 +1,13 @@
 const config = require('./wdio.conf.js').config;
 
 config.capabilities = [{
-    browserName: 'firefox',
+    browserName: 'chrome',
+    chromeOptions: {
+    args: ['--headless', '--disable-gpu']
+    }
 }];
 
-config.maxInstances = 5;
+config.maxInstances = 1;
 
 config.services = ['selenium-standalone'];
 
