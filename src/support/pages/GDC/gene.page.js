@@ -12,7 +12,7 @@ module.exports = {
         summary_annotation: '#summary > table > tbody > tr:nth-child(8) > td',
         
         external_references_section: '#skip > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div',
-        external_references_entrez_gene: '#skip > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td',
+        external_references_entrez_gene: '#skip > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div > div.undefined.test-entity-table-wrapper > table > tbody > tr:nth-child(1) > td',
         external_references_uniprotkb_swissprot: '#skip > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div > table > tbody > tr:nth-child(2) > td',
         external_references_hgnc: '#skip > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div > table > tbody > tr:nth-child(3) > td',
         external_references_omim_gene: '#skip > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div > table > tbody > tr:nth-child(4) > td',

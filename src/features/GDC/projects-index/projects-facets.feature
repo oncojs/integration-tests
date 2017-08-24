@@ -16,16 +16,16 @@ Feature: Projects list page facets
         Then  I expect that element "@ProjectsIndex.facet_project_search_result_list" contains the text "Colorectal"
 
     Scenario: Test Primary Site facet
-        Then  I wait on element "@ProjectsIndex.facet_primarysite_1" for 10000ms to be visible    
-        When  I click on the button "@ProjectsIndex.facet_primarysite_1"
+        Then  I wait on element "@ProjectsIndex.facet_primarysite_kidney" for 10000ms to be visible    
+        When  I click on the button "@ProjectsIndex.facet_primarysite_kidney"
         Then  I expect that element "@ProjectsIndex.query" contains the text "Kidney"
         Then  I expect that element "@ProjectsIndex.query" contains the text "Primary Site"
         Then  I expect that element "@ProjectsIndex.table" contains the text "Kidney"
 
     Scenario: Test any facet
-        Then  I wait on element "@ProjectsIndex.facet_primarysite_1" for 10000ms to be visible
-        Then  I save the value of element "@ProjectsIndex.facet_primarysite_1" as "$tmp_value"
-        When  I click on the element "@ProjectsIndex.facet_primarysite_1"
+        Then  I wait on element "@ProjectsIndex.facet_primarysite_kidney" for 10000ms to be visible
+        Then  I save the value of element "@ProjectsIndex.facet_primarysite_kidney" as "$tmp_value"
+        When  I click on the element "@ProjectsIndex.facet_primarysite_kidney"
         Then  I expect that element "@ProjectsIndex.query" contains the text "$tmp_value"
         Then  I expect that element "@ProjectsIndex.table" contains the text "$tmp_value"
 

@@ -1,3 +1,4 @@
+const _ = require('lodash');
 /**
  * Check if the given elements text is the same as the given text
  * @param  {String}   type          Type of element (inputfield or element)
@@ -34,6 +35,11 @@ module.exports = (type, element, constraintType, referenceValue, done) => {
     constraintType.should.be.oneOf(['above', 'below', 'equal']);
 
     const text = browser[command](element);
+
+    if (_.isArray(text)) {
+        throw new Error(`Unexpected element text to be a string, received an array instead. Are you sure the element selector for ${element} is unique?`);
+    }
+
     const number = Number(text.replace(/,/g, ''));
     
     switch(constraintType) {
