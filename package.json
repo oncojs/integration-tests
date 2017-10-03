@@ -35,7 +35,8 @@
     "wdio-sauce-service": "^0.4.0",
     "wdio-selenium-standalone-service": "^0.0.8",
     "wdio-spec-reporter": "~0.1.0",
-    "webdriverio": "~4.8.0"
+    "webdriverio": "~4.8.0",
+    "wdio-json-reporter": "~0.2.1"
   },
   "devDependencies": {
     "babel-jest": "~20.0.0",
@@ -44,6 +45,8 @@
     "eslint-config-airbnb-base": "~11.2.0",
     "eslint-plugin-import": "~2.3.0",
     "http-server": "~0.10.0",
-    "jest": "~20.0.0"
+    "jest": "~20.0.0",
+    "allure-commandline": "~2.3.5",
+    "wdio-allure-reporter": "~0.1.2"
   }
 }
