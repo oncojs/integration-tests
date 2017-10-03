@@ -51,7 +51,7 @@ Choose one of the following options:
 -- Remove the files `.travis.yml`, `jest.json` & `wdio.BUILD.conf.js`
 -- Remove all the demo features from the `/src/features` directory
 
-4. Install the dependencies (`npm install` or `yarn install`)
+4. Install the dependencies (`npm install` or `yarn install` (recommended)). (If installing via `npm install` with npm 5+, please don't check in the package-lock.json)
 
 Now you are ready to write your own features.
 
