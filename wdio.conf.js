@@ -5,7 +5,10 @@ const {
     BASE_URL,
     SAUCELAB_USER,
     SAUCELAB_KEY,
-    PROJECT
+    PROJECT,
+    CHROME,
+    CHROME_HEADLESS,
+    FIREFOX
 } = process.env;
 
 const specsPath = `./src/features/${PROJECT}/**/*.feature`;
@@ -15,8 +18,15 @@ if (!PROJECT) {
     process.exit();
 }
 if (!BASE_URL) {
-    console.error('Please provide a BASE_URL in the ".env" file (e.g. https://gdc-portal-staging.datacommons.io)');
+    console.error('Please provide a BASE_URL in the ".env" file (e.g. https://portal.gdc.cancer.gov/)');
     process.exit();
+}
+
+if (!CHROME && !CHROME_HEADLESS && !FIREFOX ) {
+    console.error('Please specify a browser type in ".env" file (non empty string wins)');
+    process.exit();
+} else {
+    console.log("Running: " + (CHROME? "chrome, ": "") + (CHROME_HEADLESS? "chrome_headless, ": "") + (FIREFOX? "firefox": ""));
 }
 
 exports.config = {
@@ -65,14 +75,23 @@ exports.config = {
     // out the Sauce Labs platform configurator - a great tool to configure your
     // capabilities: https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an
-        // in-house Selenium grid with only 5 firefox instance available you can
-        // make sure that not more than 5 instance gets started at a time.
-        maxInstances: 5,
-        //
-        browserName: 'chrome',
-    }],
+    capabilities: [
+        CHROME && {
+            maxInstances: 5,
+            browserName: 'chrome',
+        },
+        CHROME_HEADLESS && {
+            maxInstances: 5,
+            browserName: 'chrome',
+            chromeOptions: {
+                args: ['--headless', '--disable-gpu', '--window-size=1280,800'],
+            }
+        },
+        FIREFOX && {
+            maxInstances: 5,
+            browserName: 'firefox',
+        }
+    ],
     //
     // ===================
     // Test Configurations

@@ -9,3 +9,7 @@ node_modules
 errorShots
 coverage
 .env
+.DS_STORE
+
+allure-reports/
+wdio-logs/
